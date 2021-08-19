@@ -38,9 +38,9 @@ public class Main {
                                 "Please choose:");
             int input = cmd.nextInt();
             switch(input) {
-                case 1:                                                         //Department Management
+                case 1:
+                    ActionDepartment ad = new ActionDepartment();
                     while(true) {
-                        ActionDepartment ad = new ActionDepartment();
                         System.out.println("=======================\n" +
                                            "1. Add Department\n" +
                                            "2. Edit Department\n" +
@@ -79,6 +79,7 @@ public class Main {
                                 System.out.println("-----Delete Department-----");
                                 System.out.println("Enter Department ID: ");
                                 String id = cmd.nextLine();
+                                cmd.nextLine();
                                 boolean res = ad.delete(id);
                                 if(res == false) {
                                     System.out.println("Delete Unsuccessful");

@@ -99,6 +99,7 @@ public class ActionDepartment implements Action {
 
     @Override
     public void display() {
+        int size = listDp.size();
         System.out.println("-----Department List-----");
         System.out.println("ID\t\tName\t\tAddress");
         for(int i = 0; i < listDp.size(); i++) {
@@ -115,6 +116,16 @@ public class ActionDepartment implements Action {
             }
         }
         return -1;
+    }
+    
+    public static void main(String[] args) {
+        Scanner cmd = new Scanner(System.in);
+        ActionDepartment a = new ActionDepartment();
+        Department d =  a.add();
+        a.getListDp().add(d);
+        System.out.println("Enter ID:");
+        String id = cmd.nextLine();
+        a.edit(id);
     }
 
 }
